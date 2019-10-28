@@ -2,6 +2,7 @@ class ActionsPage {
     constructor(selenium, logger) {
         this.selenium = selenium
         this.logger =logger
+        
 
 
         this.searchBy = ["Name", "Country", "Email", "Owner", "Sold", "Email Type"]
