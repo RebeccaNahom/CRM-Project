@@ -1,0 +1,12 @@
+2019-10-28 16:49:12 info: start pressButtonTest:
+2019-10-28 16:50:21 info: start pressButtonTest:
+2019-10-28 16:54:08 info: start pressButtonTest:
+2019-10-28 17:00:48 info: start pressButtonTest:
+2019-10-28 17:01:01 info: This Is The Right URL
+2019-10-28 17:01:03 info: wwwwwwwwwwwwww
+2019-10-28 17:01:03 error: Got error while trying to get text from element with xpath = //div[@class='page-numbers']/span[1]
+2019-10-28 17:01:03 error: Cannot create property 'Symbol(level)' on string 'Got text from element with xpath = //div[@class='page-numbers']/span[1] '
+2019-10-28 17:01:03 error: Got error while trying to find element with xpath = //img[@name='next']
+2019-10-28 17:01:03 error: Got error while trying to get text from element with xpath = //div[@class='page-numbers']/span[1]
+2019-10-28 17:01:03 error: Cannot create property 'Symbol(level)' on string 'Got text from element with xpath = //div[@class='page-numbers']/span[1] '
+2019-10-28 17:01:03 error: Got error while trying to find element with xpath = //img[@name='previous']
