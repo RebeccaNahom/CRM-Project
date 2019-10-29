@@ -19,6 +19,7 @@ class AnalytcsPageTest {
     }
 
     async sentEmailsTest() {
+        this.logger.info(`START sentEmailsTest:`)
         await this.homePage.navigateTo(this.page[3])
         let emailSentNum = await this.analyticsPage.getEmailSentBadgesNum()
         await this.homePage.navigateTo(this.page[2])
@@ -26,25 +27,26 @@ class AnalytcsPageTest {
         await this.homePage.navigateTo(this.page[3])
         let updatedEmailSentNum = await this.analyticsPage.getEmailSentBadgesNum()
         console.log("validating if the number of email sent was added by 1:")
-        if (emailSentNum == updatedEmailSentNum - 1){
+        if (emailSentNum == updatedEmailSentNum - 1) {
             console.log("true")
-        }else{
+        } else {
             console.log("false")
         }
     }
 
     async outstandingClientsSalesInTest() {
+        this.logger.info(`START outstandingClientsSalesInTest:`)
         await this.homePage.navigateTo(this.page[3])
         let clientSalesNum = await this.analyticsPage.getOutstandingClientsBadgesNum()
         await this.homePage.navigateTo(this.page[2])
         await this.actionsPage.updateClient("Dannna Nahom", null, null, true)
         await this.homePage.navigateTo(this.page[3])
         let updatedClientSalesNum = await this.analyticsPage.getOutstandingClientsBadgesNum()
-        console.log(clientSalesNum,  updatedClientSalesNum)
+        console.log(clientSalesNum, updatedClientSalesNum)
         console.log("validating if the number of outstanding clients was reduced by 1:")
-        if (clientSalesNum == updatedClientSalesNum + 1){
+        if (clientSalesNum == updatedClientSalesNum + 1) {
             console.log("true")
-        }else{
+        } else {
             console.log("false")
         }
     }
@@ -53,6 +55,9 @@ class AnalytcsPageTest {
 
 let analytcsPageTest = new AnalytcsPageTest()
 
-// logger.warn("start of sentEmailsTest: ")
-analytcsPageTest.sentEmailsTest()
-// analytcsPageTest.outstandingClientsSalesInTest()
+async function analyticsTests() {
+    await analytcsPageTest.sentEmailsTest()
+    await analytcsPageTest.outstandingClientsSalesInTest()
+}
+
+analyticsTests()

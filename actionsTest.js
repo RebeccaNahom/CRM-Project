@@ -4,8 +4,8 @@ const ClientsPage = require("./clientsPage")
 const ActionsPage = require("./actionsPage")
 
 
-class ActionsPageTest{
-    constructor(){
+class ActionsPageTest {
+    constructor() {
         this.basePage = new BasePage()
         this.testSelenium = this.basePage.selenium
         this.logger = this.basePage.logger
@@ -17,18 +17,20 @@ class ActionsPageTest{
         this.page = ["home", "client", "actions", "analytics"]
     }
 
- 
-    async updateClientAndValidateTest(){  // needs fixing, validation.
+
+    async updateClientAndValidateTest() {  // needs fixing, validation.
+        this.logger.info(`START updateClientAndValidateTest:`)
         await this.homePage.navigateTo(this.page[2])
         await this.actionsPage.updateClient("Dana Naho", null, "A")
         await this.homePage.navigateTo(this.page[1])
-        await this.clientsPage.searchAndValidateClient("A", this.searchBy[5] )
+        await this.clientsPage.searchAndValidateClient("A", this.searchBy[5])
     }
 
-    async addClientMultipleTimesTest(){
+    async addClientMultipleTimesTest() {
+        this.logger.info(`START addClientMultipleTimesTest:`)
         await this.homePage.navigateTo(this.page[2])
         for (let i = 0; i < 3; i++) {
-            await this.actionsPage.addClient("Dana", "Nahom", "Canada", "Rebecca Nahom", "DanaNahom@imat.com") 
+            await this.actionsPage.addClient("Dana", "Nahom", "Canada", "Rebecca Nahom", "DanaNahom@imat.com")
             await this.homePage.navigateTo(this.page[1])
             await this.homePage.navigateTo(this.page[2])
         }
@@ -38,5 +40,9 @@ class ActionsPageTest{
 
 let actionsPageTest = new ActionsPageTest()
 
-// actionsPageTest.updateClientAndValidateTest()
-// actionsPageTest.addClientAndValidatesTest()
+async function actionsTests() {
+    await actionsPageTest.updateClientAndValidateTest()
+    await actionsPageTest.addClientAndValidatesTest()
+}
+
+actionsTests()

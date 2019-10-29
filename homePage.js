@@ -36,6 +36,10 @@ class HomePage{
         await this.selenium.clickElement("xpath", "//div[@class='color-btn']")
         console.log(`clicked on color button`)
     }
+
+    async close(){
+        this.selenium.close()
+    }
 }
 
 module.exports = HomePage

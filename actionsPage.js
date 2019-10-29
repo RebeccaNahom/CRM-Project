@@ -13,6 +13,8 @@ class ActionsPage {
     then updates the selected clients’ info with the info given. */
     async updateClient(name, ownership = null, type = null, isSold = null) {
         try {
+            console.log(`Updating a client:`)
+            this.logger.info(`updating a client:`)
             await this.selenium.write(name, "xpath", "//input[@list='names']")
             await this.selenium.clickElement("xpath", "//datalist[@id='names']/option[2]")
             if (ownership) {
@@ -31,6 +33,7 @@ class ActionsPage {
             }
         } catch (error) {
             console.error(`error in updateClientAndValidate Function: ${error}`)
+            this.logger.error(`error in updateClientAndValidate Function: ${error}`)
         }
     }
 
@@ -38,6 +41,7 @@ class ActionsPage {
     async addClient(first, last, country, owner, email) {  
         try {
             console.log(`Adding a client:`)
+            this.logger.info(`Adding a client:`)
             await this.selenium.write(first, "id", "firstName")
             await this.selenium.write(last, "id", "lastName")
             await this.selenium.write(country, "id", "country")
@@ -45,8 +49,10 @@ class ActionsPage {
             await this.selenium.write(email, "id", "email")
             await this.selenium.clickElement("xpath", "//input[@value='Add']")
             console.log(`added a new client with name: ${first + last}`)
+            this.logger.info(`added a new client with name: ${first + last}`)
         } catch (error) {
             console.error(`error in addClientAndValidate Function: ${error}`)
+            this.logger.error(`error in addClientAndValidate Function: ${error}`)
         }
     }
 }

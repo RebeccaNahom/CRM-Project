@@ -1,0 +1,103 @@
+[actionsTest.js]: 2019-10-29 00:24:40 info: START updateClientAndValidateTest:
+[actionsTest.js]: 2019-10-29 00:24:56 info: updating a client:
+[actionsTest.js]: 2019-10-29 00:24:57 error: Got error while trying to click on element with xpath = //datalist[@id='names']/option[2]
+[actionsTest.js]: 2019-10-29 00:24:57 error: javascript error: option element is not in a select
+  (Session info: chrome=77.0.3865.120)
+[actionsTest.js]: 2019-10-29 00:25:05 error: Got error while trying to click on element with xpath = //datalist[@id='emailType']/option[1]
+[actionsTest.js]: 2019-10-29 00:25:05 error: javascript error: option element is not in a select
+  (Session info: chrome=77.0.3865.120)
+[actionsTest.js]: 2019-10-29 00:25:30 error: Got error while trying to find element with xpath = //th[text()="A"]
+[actionsTest.js]: 2019-10-29 00:25:30 error: error in searchAndValidateClient Function: ReferenceError: error is not defined
+[actionsTest.js]: 2019-10-29 00:26:42 info: START updateClientAndValidateTest:
+[actionsTest.js]: 2019-10-29 00:27:05 info: updating a client:
+[actionsTest.js]: 2019-10-29 00:27:06 error: Got error while trying to click on element with xpath = //datalist[@id='names']/option[2]
+[actionsTest.js]: 2019-10-29 00:27:06 error: javascript error: option element is not in a select
+  (Session info: chrome=77.0.3865.120)
+[actionsTest.js]: 2019-10-29 00:27:13 error: Got error while trying to click on element with xpath = //datalist[@id='emailType']/option[1]
+[actionsTest.js]: 2019-10-29 00:27:13 error: javascript error: option element is not in a select
+  (Session info: chrome=77.0.3865.120)
+[actionsTest.js]: 2019-10-29 00:27:34 error: Got error while trying to find element with xpath = //th[text()="A"]
+[actionsTest.js]: 2019-10-29 00:27:34 error: error in searchAndValidateClient Function: ReferenceError: error is not defined
+[clientsTest.js]: 2019-10-29 00:41:30 info: START searchClientTest:
+[clientsTest.js]: 2019-10-29 00:41:46 error: Got error while trying to find element with xpath = //th[text()="Dana"]
+[clientsTest.js]: 2019-10-29 00:41:46 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 00:41:46 info: START pressButtonTest:
+[clientsTest.js]: 2019-10-29 00:41:49 info: pressing the next page button:
+[clientsTest.js]: 2019-10-29 00:41:51 info: pressed next page button 1 times
+[clientsTest.js]: 2019-10-29 00:41:51 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 00:41:52 info: true
+[clientsTest.js]: 2019-10-29 00:41:52 info: pressing previous page:
+[clientsTest.js]: 2019-10-29 00:41:54 info: Hurray! pressed previous page button
+[clientsTest.js]: 2019-10-29 00:41:54 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 00:41:54 info: true
+[clientsTest.js]: 2019-10-29 00:41:54 info: START updateClientTest:
+[clientsTest.js]: 2019-10-29 00:41:56 info: updating client's info:
+[clientsTest.js]: 2019-10-29 00:41:56 error: Got error while trying to find element with xpath = //th[text()="Dana"]
+[clientsTest.js]: 2019-10-29 00:41:56 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 00:41:56 error: Got error while trying to click on element with xpath = //th[text()="Dana"]
+[clientsTest.js]: 2019-10-29 00:41:56 error: no such element: Unable to locate element: {"method":"xpath","selector":"//th[text()="Dana"]"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:41:57 error: Got error while trying to Clear text from element with id = email
+[clientsTest.js]: 2019-10-29 00:41:57 error: no such element: Unable to locate element: {"method":"css selector","selector":"*[id="email"]"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:41:57 error: Got error while trying to send keys to element with id = email
+[clientsTest.js]: 2019-10-29 00:41:57 error: no such element: Unable to locate element: {"method":"css selector","selector":"*[id="email"]"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:41:57 error: Got error while trying to click on element with xpath = //input[@class='update-client-popup-btn']
+[clientsTest.js]: 2019-10-29 00:41:57 error: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@class='update-client-popup-btn']"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:41:57 info: validating the update of the client:
+[clientsTest.js]: 2019-10-29 00:41:57 error: Got error while trying to find element with xpath = //th[text()="Ilannnn@imat.com"]
+[clientsTest.js]: 2019-10-29 00:41:57 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 00:41:57 info: START pressLastPage:
+[clientsTest.js]: 2019-10-29 00:42:00 info: last page: [object Promise]
+[clientsTest.js]: 2019-10-29 00:42:01 info: pressing the next page button:
+[clientsTest.js]: 2019-10-29 00:49:27 info: pressed next page button 84 times
+[clientsTest.js]: 2019-10-29 00:49:27 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 00:49:27 info: true
+[clientsTest.js]: 2019-10-29 00:49:27 info: START deleteClientTest:
+[clientsTest.js]: 2019-10-29 00:49:30 info: Deleting client's info:
+[clientsTest.js]: 2019-10-29 00:49:38 error: Got error while trying to click on element with xpath = //tr[@class='clientDetails'][1]
+[clientsTest.js]: 2019-10-29 00:49:38 error: no such element: Unable to locate element: {"method":"xpath","selector":"//tr[@class='clientDetails'][1]"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:49:38 error: Got error while trying to click on element with xpath = //input[@class='delete-client-popup-btn']
+[clientsTest.js]: 2019-10-29 00:49:38 error: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@class='delete-client-popup-btn']"}
+  (Session info: chrome=77.0.3865.120)
+[clientsTest.js]: 2019-10-29 00:49:38 info: validating if client was deleted:
+[clientsTest.js]: 2019-10-29 00:49:38 info: good, client with Name: Danaaa Nahom was deleted! 
+[clientsTest.js]: 2019-10-29 09:27:19 info: START searchClientTest:
+[clientsTest.js]: 2019-10-29 09:27:34 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 09:27:34 info: START pressButtonTest:
+[clientsTest.js]: 2019-10-29 09:27:37 info: pressing the next page button:
+[clientsTest.js]: 2019-10-29 09:27:39 info: pressed next page button 1 times
+[clientsTest.js]: 2019-10-29 09:27:39 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 09:27:39 info: true
+[clientsTest.js]: 2019-10-29 09:27:39 info: pressing previous page:
+[clientsTest.js]: 2019-10-29 09:27:41 info: Hurray! pressed previous page button
+[clientsTest.js]: 2019-10-29 09:27:41 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 09:27:41 info: true
+[clientsTest.js]: 2019-10-29 09:27:41 info: START updateClientTest:
+[clientsTest.js]: 2019-10-29 09:27:44 info: updating client's info:
+[clientsTest.js]: 2019-10-29 09:27:44 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 09:27:45 info: validating the update of the client:
+[clientsTest.js]: 2019-10-29 09:27:45 error: error in searchAndValidateClient Function:
+[clientsTest.js]: 2019-10-29 09:27:45 info: START deleteClientTest:
+[clientsTest.js]: 2019-10-29 09:27:48 info: Deleting client's info:
+[clientsTest.js]: 2019-10-29 09:27:59 info: validating if client was deleted:
+[clientsTest.js]: 2019-10-29 09:27:59 info: good, client with Name: Dana Nahom was deleted! 
+[clientsTest.js]: 2019-10-29 09:49:59 info: START searchClientTest:
+[clientsTest.js]: 2019-10-29 09:50:13 info: START pressButtonTest:
+[clientsTest.js]: 2019-10-29 09:50:16 info: pressing the next page button:
+[clientsTest.js]: 2019-10-29 09:50:19 info: pressed next page button 1 times
+[clientsTest.js]: 2019-10-29 09:50:19 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 09:50:19 info: true
+[clientsTest.js]: 2019-10-29 09:50:19 info: pressing previous page:
+[clientsTest.js]: 2019-10-29 09:50:21 info: Hurray! pressed previous page button
+[clientsTest.js]: 2019-10-29 09:50:21 info: validating if page was pressed:
+[clientsTest.js]: 2019-10-29 09:50:21 info: true
+[clientsTest.js]: 2019-10-29 09:50:21 info: START updateClientTest:
+[clientsTest.js]: 2019-10-29 09:50:24 info: updating client's info:
+[clientsTest.js]: 2019-10-29 09:50:25 info: validating the update of the client:
+[clientsTest.js]: 2019-10-29 09:50:25 info: START pressLastPage:
+[clientsTest.js]: 2019-10-29 09:50:28 info: last page: [object Promise]
+[clientsTest.js]: 2019-10-29 09:50:28 info: pressing the next page button:

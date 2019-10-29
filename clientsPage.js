@@ -64,7 +64,6 @@ class ClientsPage {
             }
         } catch (error) {
             console.error(`error in searchAndValidateClient Function: ${error}`)
-            this.logger.error(`error in searchAndValidateClient Function: ${error}`)
         }
     }
 
@@ -81,10 +80,10 @@ class ClientsPage {
     if given an input - press the button for nuber of times given.*/
     async pressNextPageAndValidate(pageNum = 0) {
         try {
-            this.logger.info("wwwwwwwwwwwwww")
             let currentPage = await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")
             console.log(`current page = ${currentPage}`)
-            console.log(`pressing next page:`)
+            console.log(`pressing the next page button:`)
+            this.logger.info("pressing the next page button:")
             let nextPageButton = await this.selenium.findElementBy("xpath", "//img[@name='next']")
             if (pageNum) {
                 for (let i = 0; i < pageNum; i++) {
@@ -93,25 +92,33 @@ class ClientsPage {
                     console.log(`pressed page number ${pressedPage}`)
                 }
                 console.log(`pressed next page button ${pageNum} times`)
+                this.logger.info(`pressed next page button ${pageNum} times`)
                 console.log(`validating if page was pressed:`)
+                this.logger.info(`validating if page was pressed:`)
                 if (await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")
                     == pageNum + 1) {
                     console.log("true")
+                    this.logger.info(`true`)
                 } else {
                     console.log("false")
+                    this.logger.info(`false`)
                 }
             } else {
                 await this.selenium.clickElement(null, null, nextPageButton)
                 console.log(`Yay! pressed next page button`)
+                this.logger.info(`Yay! pressed next page button`)
                 if (await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")
                     == currentPage + 1) {
                     console.log("true")
+                    this.logger.info(`true`)
                 } else {
                     console.log("false")
+                    this.logger.info(`false`)
                 }
             }
         } catch (error) {
             console.error(`error in pressNextPage Function: ${error}`)
+            this.logger.error(`error in pressNextPage Function: ${error}`)
         }
     }
 
@@ -122,6 +129,7 @@ class ClientsPage {
             let currentPage = await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")
             console.log(`current page = ${currentPage}`)
             console.log(`pressing previous page:`)
+            this.logger.info(`pressing previous page:`)
             let PreviousPageButton = await this.selenium.findElementBy("xpath", "//img[@name='previous']")
             if (pageNum) {
                 for (let i = 0; i < pageNum; i++) {
@@ -130,26 +138,35 @@ class ClientsPage {
                     console.log(`pressed page number ${pressedPage}`)
                 }
                 console.log(`pressed previous page button ${pageNum} times`)
+                this.logger.info(`pressed previous page button ${pageNum} times`)
                 console.log(`validating if page was pressed:`)
+                this.logger.info(`validating if page was pressed:`)
                 if (currentPage - pageNum ==
                     await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")) {
                     console.log("true")
+                    this.logger.info("true")
                 } else {
                     console.log("false")
+                    this.logger.info("false")
                 }
             } else {
                 await this.selenium.clickElement(null, null, PreviousPageButton)
                 console.log(`Hurray! pressed previous page button`)
+                this.logger.info(`Hurray! pressed previous page button`)
                 console.log(`validating if page was pressed:`)
+                this.logger.info(`validating if page was pressed:`)
                 if (currentPage - 1 ==
                     await this.selenium.getTextFromElement("xpath", "//div[@class='page-numbers']/span[1]")) {
                     console.log("true")
+                    this.logger.info("true")
                 } else {
                     console.log("false")
+                    this.logger.info("false")
                 }
             }
         } catch (error) {
             console.error(`error in pressPreviousPage Function: ${error}`)
+            this.logger.error(`error in pressPreviousPage Function: ${error}`)
         }
     }
 
@@ -158,6 +175,7 @@ class ClientsPage {
     async updateClientAndValidate(input, updateInfo, updateBy, searchBy) {  // fix validation - cant validate with name and country
         try {
             console.log(`updating client's info:`)
+            this.logger.info(`updating client's info:`)
             let fullName = input
             let firstName = fullName.split(" ")[0]
             await this.searchAndValidateClient(input, "Name")
@@ -166,16 +184,20 @@ class ClientsPage {
             await this.selenium.write(updateInfo, "id", updateBy)
             await this.selenium.clickElement("xpath", `//input[@class='update-client-popup-btn']`)
             console.log(`validating the update of the client:`)
+            this.logger.info(`validating the update of the client:`)
             await this.searchAndValidateClient(updateInfo, searchBy)
 
         } catch (error) {
             console.error(`error in updateClientAndValidate Function: ${error}`)
+            this.logger.error(`error in updateClientAndValidate Function: ${error}`)
         }
     }
 
     /*given the input, search for client, then deletes the selected client’s info */
     async deleteClient(input, searchBy) {
         try {
+            console.log(`Deleting client's info:`)
+            this.logger.info(`Deleting client's info:`)
             await this.selenium.write(input, "xpath", "//input[@type='text']")
             await this.selenium.clickElement("xpath", '//select[@class="select-css"]')
             await this.selenium.clickElement("xpath", `//option[@value="${searchBy}"]`)
@@ -183,13 +205,17 @@ class ClientsPage {
             await this.selenium.clickElement("xpath", `//tr[@class='clientDetails'][1]`)
             await this.selenium.clickElement("xpath", `//input[@class='delete-client-popup-btn']`)
             console.log(`validating if client was deleted:`)
+            this.logger.info(`validating if client was deleted:`)
             if (await this.selenium.isElementExists("xpath", `//th[text()="${input}"]`)) {
                 console.log(`oh no! client with ${searchBy}: ${input} was not deleted!`)
+                this.logger.info(`oh no! client with ${searchBy}: ${input} was not deleted!`)
             } else {
                 console.log(`good, client with ${searchBy}: ${input} was deleted! `)
+                this.logger.info(`good, client with ${searchBy}: ${input} was deleted! `)
             }
         } catch (error) {
             console.error(`error in deleteClientAndValidate Function: ${error}`)
+            this.logger.error(`error in deleteClientAndValidate Function: ${error}`)
         }
     }
 

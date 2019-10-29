@@ -24,10 +24,10 @@ class SelenuimInfra {
         }, 1000)
     }
 
-    async validURL(pageName) {
+    async validURL(pageName) {  //validate the URL
         if (this.driver.wait(until.urlContains(pageName), 5000)) {
             console.log("This Is The Right URL")
-            this.logger.info("This Is The Right URL")
+            this.logger.silly("This Is The Right URL")
             return true
         }
         else {
@@ -41,10 +41,6 @@ class SelenuimInfra {
         await this.driver.sleep(num)
     }
 
-    async refresh(){
-        this.driver.findElement(By.id("Contact-us")).sendKeys(Keys.F5)
-
-    }
 
     // Click on element
     async clickElement(locatorType = "id", locatorValue = " ", element = null, fromElement) {
@@ -59,13 +55,11 @@ class SelenuimInfra {
             await element.click()
             await this.driver.sleep(2000)
             console.log(`Clicked on element with ${locatorType} = ${locatorValue}`)
-            this.logger.info(`Clicked on element with ${locatorType} = ${locatorValue}`)
+            this.logger.silly(`Clicked on element with ${locatorType} = ${locatorValue}`)
         }
         catch (error) {
             console.error(`Got error while trying to click on element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(`Got error while trying to click on element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(error)
 
         }
     }
@@ -83,13 +77,11 @@ class SelenuimInfra {
             }
             await element.sendKeys(data)
             console.log(`Send Keys to element with ${locatorType} = ${locatorValue} `)
-            this.logger.info(`Send Keys to element with ${locatorType} = ${locatorValue} `)
+            this.logger.silly(`Send Keys to element with ${locatorType} = ${locatorValue} `)
         }
         catch (error) {
             console.error(`Got error while trying to send keys to element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(`Got error while trying to send keys to element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(error)
         }
     }
 
@@ -104,14 +96,12 @@ class SelenuimInfra {
                 }
             }
             console.log(`Got text from element with ${locatorType} = ${locatorValue} `)
-            this.logger.log(`Got text from element with ${locatorType} = ${locatorValue} `)
+            this.logger.silly(`Got text from element with ${locatorType} = ${locatorValue} `)
             return element.getText()
         }
         catch (error) {
             console.error(`Got error while trying to get text from element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(`Got error while trying to get text from element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(error)
             return ""
         }
     }
@@ -128,13 +118,11 @@ class SelenuimInfra {
             }
             await element.clear()
             console.log(`Clear text from element with ${locatorType} = ${locatorValue} `)
-            this.logger.log(`Clear text from element with ${locatorType} = ${locatorValue} `)
+            this.logger.silly(`Clear text from element with ${locatorType} = ${locatorValue} `)
         }
         catch (error) {
             console.error(`Got error while trying to Clear text from element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(`Got error while trying to Clear text from element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(error)
         }
     }
 
@@ -161,14 +149,12 @@ class SelenuimInfra {
                 element = await this.driver.findElement(By[locatorType](locatorValue))
             }
             console.log(`Found element with ${locatorType} = ${locatorValue} `)
-            this.logger.log(`Found element with ${locatorType} = ${locatorValue} `)
+            this.logger.silly(`Found element with ${locatorType} = ${locatorValue} `)
             return element
         }
         catch{
             console.error(`Got error while trying to find element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(`Got error while trying to find element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(error)
         }
 
     }
@@ -187,9 +173,7 @@ class SelenuimInfra {
         }
         catch{
             console.error(`Got error while trying to find element with ${locatorType} = ${locatorValue}`)
-            this.logger.error(`Got error while trying to find element with ${locatorType} = ${locatorValue}`)
             console.error(error)
-            this.logger.error(error)
         }
 
     }

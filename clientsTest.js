@@ -15,44 +15,49 @@ class ClientsPageTest {
     }
 
 
-    async searchClientTest(){
-        this.logger.info(`start searchClientTest:`)
+    async searchClientTest() {
+        this.logger.info(`START searchClientTest:`)
         await this.homePage.navigateTo(this.page[1])
         await this.clientsPage.searchAndValidateClient("Dana Nahom", this.searchBy[0])
     }
 
-    async pressButtonTest(){
-        this.logger.info(`start pressButtonTest:`)
+    async pressButtonTest() {
+        this.logger.info(`START pressButtonTest:`)
         await this.homePage.navigateTo(this.page[1])
         await this.clientsPage.pressNextPageAndValidate(1)
         await this.clientsPage.pressPreviousPageAndValidate()
     }
 
-    async updateClientTest(){
-        this.logger.info(`start updateClientTest:`)
+    async updateClientTest() {
+        this.logger.info(`START updateClientTest:`)
         let updateBy = ["name", "country", "email"]
         await this.homePage.navigateTo(this.page[1])
         await this.clientsPage.updateClientAndValidate("Dana Nahom", "Ilannnn@imat.com", updateBy[2], this.searchBy[2])
     }
 
-    async pressLastPage(){
-        this.logger.info(`start pressLastPage:`)
+    async pressLastPage() {
+        this.logger.info(`START pressLastPage:`)
         await this.homePage.navigateTo(this.page[1])
         let lastPage = await this.clientsPage.findLastPage()
         await this.clientsPage.pressNextPageAndValidate(lastPage - 1)
     }
 
-    async deleteClientTest(){
-        this.logger.info(`start deleteClientTest:`)
+    async deleteClientTest() {
+        this.logger.info(`START deleteClientTest:`)
         await this.homePage.navigateTo(this.page[1])
-        await this.clientsPage.deleteClient("Danaaa Nahom", this.searchBy[0])
+        await this.clientsPage.deleteClient("Danaa Nahom", this.searchBy[0])
+        await this.homePage.close()
     }
 }
 
 let clientPageTest = new ClientsPageTest()
 
-// clientPageTest.searchClientTest()
-clientPageTest.pressButtonTest()
-// clientPageTest.updateClientTest()
-// clientPageTest.pressLastPage()
-// clientPageTest.deleteClientTest()
+async function clientTests() {
+    await clientPageTest.searchClientTest()
+    await clientPageTest.pressButtonTest()
+    await clientPageTest.updateClientTest()
+    await clientPageTest.pressLastPage()
+    await clientPageTest.deleteClientTest()
+}
+
+clientTests()
